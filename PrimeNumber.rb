@@ -8,8 +8,14 @@ class PrimeNumber
 	#1から入力された数字まで実行する振る舞い
 	def run(inputNumber)
 		for i in 1..inputNumber
+			if i == inputNumber then
+				puts ""
+			elsif i == 1
+			else
+				print ","
+			end
 			if judge(i) == TRUE then
-				puts i
+				print i
 			end
 		end
 	end
@@ -37,8 +43,4 @@ class PrimeNumber
 		end while i > number/2
 		return TRUE
 	end
-
-	pn = PrimeNumber.new
-	#pn.run()
-
 end

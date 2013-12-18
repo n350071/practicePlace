@@ -8,5 +8,5 @@ class PrimeNumberRunner
 	pn = PrimeNumber.new()
 
 	#実行
-	pn.run(100)
+	pn.run(100000)
 end
