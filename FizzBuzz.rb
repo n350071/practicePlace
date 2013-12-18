@@ -32,6 +32,12 @@ class FizzBuzz
 	def viewAns()
 		puts @ansHash
 	end
+
+	#実行する
+	def run(inputNumber)
+		loopReact(inputNumber)
+		viewAns()
+	end
 end
 
 
