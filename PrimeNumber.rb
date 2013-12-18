@@ -5,9 +5,6 @@ class PrimeNumber
 	TRUE = "TRUE"
 	FALSE = "FALSE"
 
-	#変数定義
-	@prePrime = 1
-
 	#1から入力された数字まで実行する振る舞い
 	def run(inputNumber)
 		for i in 1..inputNumber
@@ -25,7 +22,6 @@ class PrimeNumber
 
 	#素数かどうかを判定する関数
 	def judge(number)
-		puts "prePrime=#{@prePrime},number=#{number}"
 		#素数は自分と本人以外では割り切れない数字で１を除くので、１は素数ではないので除く
 		if number==1 then
 			return FALSE
@@ -34,7 +30,7 @@ class PrimeNumber
 			return TRUE
 		end
 		#2より大きい2の倍数は素数ではない
-		if number % 2  == 0 then
+		if number % 2 == 0 then
 			return FALSE
 		end
 			
@@ -44,9 +40,7 @@ class PrimeNumber
 				return FALSE
 			end
 			i -=1
-		end while i > @prePrime
-		# end while i > number/2
-		@prePrime = number
+		end while i > number/2
 		return TRUE
 	end
 end
