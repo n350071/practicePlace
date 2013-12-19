@@ -1,4 +1,6 @@
 #!/usr/bin/ruby
+#入力された数字までの素数を数え上げるプログラム
+#性能は"10000"のオーダーに対して、0.46秒程度
 class PrimeNumber
 
 	#定数定義
@@ -40,7 +42,7 @@ class PrimeNumber
 				return FALSE
 			end
 			i -=1
-		end while i > number/2
+		end while  i > number/2 
 		return TRUE
 	end
 end
