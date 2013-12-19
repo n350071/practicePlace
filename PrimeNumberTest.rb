@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 #coding: utf-8
 
-load 'PrimeNumber.rb'
+require File.expand_path('../PrimeNumber.rb', __FILE__)
 class PrimeNumberTest
 
 	#定数定義
