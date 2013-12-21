@@ -14,7 +14,6 @@ class SquareRootTest
 	sr = SquareRoot.new()
 
 	#4の平方根は2
-	puts "4の平方根は2"
 	if sr.squareRoot(4,0) == 2 then
 		puts TRUE
 	else
@@ -22,7 +21,6 @@ class SquareRootTest
 	end
 
 	#16の平方根は4
-	puts "16の平方根は4"
 	if sr.squareRoot(16,0) == 4 then
 		puts TRUE
 	else
@@ -30,7 +28,6 @@ class SquareRootTest
 	end
 
 	#2の平方根の第三位までは1.41
-	puts "2の平方根の第三位までは1.41"
 	if sr.squareRoot(2,3) == 1.41 then
 		puts TRUE
 	else
