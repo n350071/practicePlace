@@ -13,6 +13,7 @@ class SquareRootTest
 	#インスタンス生成
 	sr = SquareRoot.new()
 
+	puts "答えが整数のテスト"
 	#4の平方根は2
 	if sr.squareRoot(4,0) == 2 then
 		puts TRUE
@@ -27,47 +28,58 @@ class SquareRootTest
 		puts FALSE
 	end
 
-	#2の平方根の第三位までは1.41
-	if sr.squareRoot(2,3) == 1.41 then
+	puts "答えがが無限小数のテスト"
+	#2の平方根の第2位までは1.41
+	if sr.squareRoot(2,2) == 1.41 then
 		puts TRUE
 	else
 		puts FALSE
 	end
 
-	# puts "calcの確認"
-	# #10の平方根の少数第０位は3
-	# puts "10の平方根の少数第０位は3"
-	# if sr.calc(10,0) == 3 then
-	# 	puts TRUE
-	# else
-	# 	puts FALSE
-	# end
+	#2の平方根の第11位まで
+	if sr.squareRoot(2,11) == 1.41421356237 then
+		puts TRUE
+	else
+		puts FALSE
+	end
 
-	# puts "2の平方根の少数第0位は1"
-	# if sr.calc(2,0) == 1 then
-	# 	puts TRUE
-	# else
-	# 	puts FALSE
-	# end
+	#3の平方根の第11位まで
+	if sr.squareRoot(3,11) == 1.73205080756 then
+		puts TRUE
+	else
+		puts FALSE
+	end
 
-	# puts "2の平方根の少数第1位は1"
-	# if sr.calc(2,1) == 1 then
-	# 	puts TRUE
-	# else
-	# 	puts FALSE
-	# end
+	puts "答えが有限小数のテスト"
+	if sr.squareRoot(1.5625,3) == 1.25 then
+		puts TRUE
+	else
+		puts FALSE
+	end
 
-	# puts "2の平方根の少数第2位は4"
-	# if sr.calc(2,2) == 4 then
-	# 	puts TRUE
-	# else
-	# 	puts FALSE
-	# end
+	if sr.squareRoot(76.9129,3) == 8.77 then
+		puts TRUE
+	else
+		puts FALSE
+	end
 
-	# puts "2の平方根の少数第3位は2"
-	# if sr.calc(2,3) == 2 then
-	# 	puts TRUE
-	# else
-	# 	puts FALSE
-	# end
+	puts "後ろの数字が大きすぎるもののテスト"
+	if sr.squareRoot(1.5625,100) == 1.25 then
+		puts TRUE
+	else
+		puts FALSE
+	end
+
+	if sr.squareRoot(76.9129,100) == 8.77 then
+		puts TRUE
+	else
+		puts FALSE
+	end
+
+	#3の平方根の第12位まで
+	if sr.squareRoot(3,100) == 1.732050807568 then
+		puts TRUE
+	else
+		puts FALSE
+	end
 end
