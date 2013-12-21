@@ -15,23 +15,23 @@ class SquareRootTest
 
 	#4の平方根は2
 	puts "4の平方根は2"
-	if sr.squareRoot(4) == 2 then
+	if sr.squareRoot(4,0) == 2 then
 		puts TRUE
 	else
 		puts FALSE
 	end
 
-	#4の平方根は2
+	#16の平方根は4
 	puts "16の平方根は4"
-	if sr.squareRoot(16) == 4 then
+	if sr.squareRoot(16,0) == 4 then
 		puts TRUE
 	else
 		puts FALSE
 	end
 
 	#2の平方根の第三位までは1.41
-	puts "2の平方根は1.41"
-	if 1.40 < sr.squareRoot(2) && sr.squareRoot(2) < 1.42 then
+	puts "2の平方根の第三位までは1.41"
+	if sr.squareRoot(2,3) == 1.41 then
 		puts TRUE
 	else
 		puts FALSE
