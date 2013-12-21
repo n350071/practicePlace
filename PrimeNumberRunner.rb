@@ -11,7 +11,7 @@ class PrimeNumberRunner
 
 	#実行
 	sw.start()
-	pn.run(10000)
+	pn.run(1000)
 	sw.end()
 	puts sw.result
 end
