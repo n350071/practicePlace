@@ -12,6 +12,7 @@ class TowerofHanoi
 		@poleA = []
 		@poleB = []
 		@poleC = []
+		@count #手数
 	end
 
 	# 試行錯誤のためのメソッド
@@ -30,6 +31,16 @@ class TowerofHanoi
 
 	#解を求める
 	def solve(n)
+		# @count += 1
+		if n == 1 then
+			moveDisk(@poleA,@poleC)
+			printPoles
+		else
+		#n-1個まで、何らかの方法で、AからBに動かす
+			printPoles
+			solve(n-1)
+		end
+
 	end
 
 	#ポールに数字(円盤)を入力しようとすると、一番小さい数字と比較して、乗せてよいかどうかを判定して返す
