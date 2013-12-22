@@ -2,27 +2,12 @@
 #coding: utf-8
 
 class TowerofHanoi
-	#仕様
-	#ルール
-	#３本の杭とn枚の円盤を持っている
-	#初期状態は左端の杭に全部乗っている
-	#円盤を一回に一枚ずつどれかの杭に移動させることができるが、小さな円盤の上に大きな円盤を乗せることはできない
-	#インプット
-	#円盤の枚数n
-	#アウトプット
-	#解法、つまり、それを人間が見せられたら解けるやつ。
-		#l回で解けるとして、そのm回目の状態を表示する
-		#1回目からl回目までの状態を画面に表示する
-	#イメージ
-	#poleA => 1,3,5,8,9
-	#poleB => 2,4,6,7
-	#poleC =>
-
 	#インスタンス変数
 	#ポール３本はハノイの塔と共に創造される
 	#ポールは複数の数字を覚えておくことができる
-	#ポールに数字(円盤)を入力しようとすると、一番小さい数字と比較して、乗せてよいかどうかを判定して返す
-	#乗せてよい場合は、入力された数字を追加する
+	attr:poleA, true
+	attr:poleB, true
+	attr:poleC, true
 	def initialize
 		@poleA = []
 		@poleB = []
@@ -43,7 +28,31 @@ class TowerofHanoi
 		poles
 	end
 
+	#解を求める
+	def solve(n)
+	end
+
+	#ポールに数字(円盤)を入力しようとすると、一番小さい数字と比較して、乗せてよいかどうかを判定して返す
+	#乗せてよい場合は、入力された数字を追加する
 	def moveDisk(from,to)
+		#移動可能性を確認する
+		if from.size == 0 then
+			#移動しようがないのでエラー
+			return false
+		elsif to.size == 0 then
+			#絶対移動できるので移動
+		elsif from[from.size-1] < to[to.size-1] then
+			# デバッグ用
+			# print "from : #{from[from.size-1]} \n"
+			# print "to   : #{ to[to.size-1]} \n"
+			
+			#移動元のサイズが大きいので移動可能
+		else
+			return false
+		end
+		#移動する
+		to.push(from.pop)
+		return true
 	end
 
 	#１〜numberまでの数字をポールAにセットするメソッド
@@ -51,18 +60,19 @@ class TowerofHanoi
 		for i in 1..number
 			@poleA.push(i)
 		end
+		@poleA.reverse!
 	end
 
 	#ゲッターメソッド
-	def poleA
+	def getPoleA
 		@poleA
 	end
 
-	def poleB
+	def getPoleB
 		@poleB
 	end
 
-	def poleC
+	def getPoleC
 		@poleC
 	end
 
