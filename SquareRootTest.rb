@@ -82,4 +82,12 @@ class SquareRootTest
 	else
 		puts FALSE
 	end
+
+	puts "桁数を言わなくても動くかテスト"
+	if sr.squareRoot(1.5625) == 1.25 then
+		puts TRUE
+	else
+		puts FALSE
+	end
+
 end

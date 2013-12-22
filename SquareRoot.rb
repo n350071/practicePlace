@@ -4,7 +4,7 @@
 # 入力された値の平方根を少数第12位まで求めるクラス
 class SquareRoot
 
-	def squareRoot(input,depth) #入力値,小数第何位まで
+	def squareRoot(input,depth=12) #入力値,小数第何位まで
 		if depth > 12
 			depth = 12
 		end
