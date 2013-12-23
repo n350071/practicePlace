@@ -56,7 +56,7 @@ class TowerofHanoi
 		hanoi(n-1, start, tmp, goal)
 		p "move #{n} to #{goal}" 
 		hanoi(n-1, tmp, goal, start)
-	end
+	end 
 
 	#ポールに数字(円盤)を入力しようとすると、一番小さい数字と比較して、乗せてよいかどうかを判定して返す
 	#乗せてよい場合は、入力された数字を追加する
