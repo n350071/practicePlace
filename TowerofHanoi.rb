@@ -8,11 +8,12 @@ class TowerofHanoi
 	attr:poleA, true
 	attr:poleB, true
 	attr:poleC, true
+	attr:count
 	def initialize
 		@poleA = []
 		@poleB = []
 		@poleC = []
-		@count #手数
+		@count = 0 #手数
 	end
 
 	# 試行錯誤のためのメソッド
@@ -31,20 +32,36 @@ class TowerofHanoi
 
 	#解を求める
 	def solve(n)
-		# @count += 1
 		if n == 1 then
 			moveDisk(@poleA,@poleC)
 			printPoles
-		else
+		elsif n == 2 then
 		#n-1個まで、何らかの方法で、AからBに動かす
 			printPoles
 			solve(n-1)
 		end
+	end
 
+	#ハノイの塔を再帰的に解いて表示するメソッド
+	#n 		:円盤の数
+	#start	:スタートする棒の名前
+	#goal	:ゴールの棒の名前
+	#tmp	:一時置き場の棒の名前
+	def hanoi(n, start, goal, tmp)
+		#n==0のときおわり
+		if n == 0 then
+			return
+		end
+		#(n-1)までの円盤をスタートから一時置き場に…
+		hanoi(n-1, start, tmp, goal)
+		p "move #{n} to #{goal}" 
+		hanoi(n-1, tmp, goal, start)
 	end
 
 	#ポールに数字(円盤)を入力しようとすると、一番小さい数字と比較して、乗せてよいかどうかを判定して返す
 	#乗せてよい場合は、入力された数字を追加する
+	#移動したら手数を追加する
+	#
 	def moveDisk(from,to)
 		#移動可能性を確認する
 		if from.size == 0 then
@@ -63,6 +80,7 @@ class TowerofHanoi
 		end
 		#移動する
 		to.push(from.pop)
+		@count += 1
 		return true
 	end
 
@@ -92,6 +110,7 @@ class TowerofHanoi
 		@poleA = []
 		@poleB = []
 		@poleC = []
+		@count = 0
 	end
 
 

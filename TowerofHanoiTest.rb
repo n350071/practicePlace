@@ -35,6 +35,8 @@ class TowerofHanoiTest
 	puts "+++円盤移動のテスト+++"
 	th.flash
 	th.setPoleA(3)
+	# th.printPoles
+
 	puts "++B,Cからは動かせない++"
 	if !(th.moveDisk(th.poleB,th.poleA)) then
 		puts TRUE
@@ -80,11 +82,40 @@ class TowerofHanoiTest
 		puts FALSE
 	end
 
-	th.printPoles
+	puts "手数を数えているか確認"
+	if th.count == 3 then
+		puts TRUE
+	else
+		puts th.count
+		puts FALSE
+	end		
+
+	# th.printPoles
 
 	puts "++++++++++++++++++++++++"
 	puts "      テスト終了          "
 	puts "++++++++++++++++++++++++"
+
+	th.hanoi(4,"poleA","poleB","poleC")
+
+	puts "答えが変わっていないことのテスト"
+	def hanoiTest(n, start, goal, tmp)
+		return if n == 0
+		hanoiTest(n-1, start, tmp, goal)
+		p "move #{n} to #{goal}" 
+		hanoiTest(n-1, tmp, goal, start)
+	end
+
+	this = TowerofHanoiTest.new()
+	this.hanoiTest(4,"poleA","poleB","poleC")
+
+
+
+
+
+
+
+
 end
 
 
